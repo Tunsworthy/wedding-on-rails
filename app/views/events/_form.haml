@@ -1,6 +1,12 @@
 = simple_form_for @event do |f|
   = f.input :title
   = f.input :location
+  = f.input :partner_one
+  = f.input :partner_two
+  = f.input :venue_name
+  = f.input :venue_address_line_one
+  = f.input :venue_address_city
+  = f.input :venue_address_state
   = f.input :venue_body, input_html: {rows: 10}
   = f.input :venue_directions, input_html: {rows: 10}
   = f.input :date, as: :string, input_html: { class: "js-datetimepicker" }
