@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
   has_many :venue_photos
   has_many :event_notifications
 
+  
   after_create :create_event_task_list
 
   def days_to_go
@@ -23,6 +24,11 @@ class Event < ActiveRecord::Base
     return false if in_past?
     return false if is_today?
     return true
+  end
+
+def show_registry?
+    return false if Event.last.registry == false
+    return true if Event.last.registry == true
   end
 
   def in_past?

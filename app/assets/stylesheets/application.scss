@@ -59,7 +59,7 @@
   font-weight: normal;
   font-style: normal;
 }
-
+/*
 @font-face {
   font-family: 'fontello';
   src: asset-url('fontello.eot?45784083');
@@ -70,6 +70,20 @@
   font-weight: normal;
   font-style: normal;
 }
+
+*/
+@font-face {
+  font-family: 'fontello';
+  src: asset-url('fontello.eot?19911895');
+  src: asset-url('fontello.eot?19911895#iefix') format('embedded-opentype'),
+       asset-url('fontello.woff2?19911895') format('woff2'),
+       asset-url('fontello.woff?19911895') format('woff'),
+       asset-url('fontello.ttf?19911895') format('truetype'),
+       asset-url('fontello.svg?19911895#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 .text--success {
   color: $green;

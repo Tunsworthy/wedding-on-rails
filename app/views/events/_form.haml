@@ -10,4 +10,7 @@
   = f.input :venue_body, input_html: {rows: 10}
   = f.input :venue_directions, input_html: {rows: 10}
   = f.input :date, as: :string, input_html: { class: "js-datetimepicker" }
+  = f.label 'Show Registry'
+  = f.check_box :registry 
+  = f.input :registry_body, input_html: {rows: 10}
   = f.button :submit

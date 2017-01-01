@@ -19,7 +19,7 @@
       %br
       %br
 
-      %h2= "at the beautiful #{@event.venue_name}"
+      %h2= "at the beautiful #{@event.location}"
       %h4= "in #{@event.venue_address_city}"
 
       %br
@@ -28,7 +28,9 @@
 
       - if @event.show_rsvp?
         = link_to raw("<span class='icon icon-pencil'></span> RSVP now"), "#rsvp", class: "button large js-scroll-to"
-
+        = link_to raw("<span class='icon icon-location'></span> Venue"), "#venue", class: "button large js-scroll-to"
+      - if @event.show_registry?
+        = link_to raw("<span class='icon icon-gift'></span>Wedding Gifts"), "#Gifts", class: "button large js-scroll-to"
 - if @event.show_rsvp?
   %br
 
@@ -58,6 +60,7 @@
                 %input{type: "checkbox", ng: {change: "toggleVegetarian(guest)", model: "guest.vegetarian"}}
                 Vegetarian
 
+#venue
 .box.box--mint
   .row
     .column.small-12
@@ -84,7 +87,7 @@
           <script type="text/javascript">
           (function(){
           function wpgmappity_maps_loaded() {
-          var latlng = new google.maps.LatLng(51.456370, -2.606592);
+          var latlng = new google.maps.LatLng(51.514700, -0.082156);
           var options = {
            center : latlng,
            mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -97,10 +100,10 @@
            mapTypeControl : false,
            scaleControl : false,
            streetViewControl : false,
-           panControl : false, zoom : 14
+           panControl : false, zoom : 16
           };
           var wpgmappitymap = new google.maps.Map(document.getElementById('wpgmappitymap'), options);
-          var point0 = new google.maps.LatLng(51.4606887,-2.6247733000000153);
+          var point0 = new google.maps.LatLng(51.514787, -0.081821);
           var marker0= new google.maps.Marker({
            icon : 'http://labio-wedding.s3.amazonaws.com/assets/church7.png',
            position : point0,
@@ -109,69 +112,10 @@
           google.maps.event.addListener(marker0,'click',
            function() {
            var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">The Mansion House</h3>'});
+           {content: '<h3 class="font-book-antiqua">St Helen Bishopsgate</h3>'});
            infowindow.open(wpgmappitymap,marker0);
            });
-          var point1 = new google.maps.LatLng(51.4527825,-2.62524099999996);
-          var marker1= new google.maps.Marker({
-           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
-           position : point1,
-           map : wpgmappitymap
-           });
-          google.maps.event.addListener(marker1,'click',
-           function() {
-           var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">The Bristol Hotel</h3><a target=\"_blank\" href=\"http://www.doylecollection.com/hotels/the-bristol-hotel\">Go to website</a>'});
-           infowindow.open(wpgmappitymap,marker1);
-           });
-          var point2 = new google.maps.LatLng(51.4488666,-2.587721999999985);
-          var marker2= new google.maps.Marker({
-           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
-           position : point2,
-           map : wpgmappitymap
-           });
-          google.maps.event.addListener(marker2,'click',
-           function() {
-           var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">DoubleTree</h3><a target=\"_blank\" href=\"http://doubletree3.hilton.com/en/index.html\">Go to website</a>'});
-           infowindow.open(wpgmappitymap,marker2);
-           });
-          var point3 = new google.maps.LatLng(51.4559676,-2.5847842000000583);
-          var marker3= new google.maps.Marker({
-           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
-           position : point3,
-           map : wpgmappitymap
-           });
-          google.maps.event.addListener(marker3,'click',
-           function() {
-           var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">Bristol Marriott</h3><a target=\"_blank\" href=\"http://www.marriott.com/hotels/travel/brsdt-bristol-marriott-hotel-city-centre/\">Go to website</a>'});
-           infowindow.open(wpgmappitymap,marker3);
-           });
-          var point4 = new google.maps.LatLng(51.4522431,-2.59696770000005);
-          var marker4= new google.maps.Marker({
-           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
-           position : point4,
-           map : wpgmappitymap
-           });
-          google.maps.event.addListener(marker4,'click',
-           function() {
-           var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">Radisson Blu</h3><a target=\"_blank\" href=\"http://www.radissonblu.co.uk/hotel-bristol\">Go to website</a>'});
-           infowindow.open(wpgmappitymap,marker4);
-           });
-          var point5 = new google.maps.LatLng(51.4597989,-2.586416399999962);
-          var marker5= new google.maps.Marker({
-           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
-           position : point5,
-           map : wpgmappitymap
-           });
-          google.maps.event.addListener(marker5,'click',
-           function() {
-           var infowindow = new google.maps.InfoWindow(
-           {content: '<h3>Holiday Inn</h3><a target=\"_blank\" href=\"http://www.ihg.com/holidayinn/hotels/gb/en/bristol/brscc/hoteldetail\">Go to website</a>'});
-           infowindow.open(wpgmappitymap,marker5);
-           });
+          
           }
           window.onload = function() {
            wpgmappity_maps_loaded();
@@ -179,15 +123,22 @@
           })()
           </script>
 
-  %br
+- if @event.show_registry?
+  #Gifts
+  .box.box--mint
+    .row
+      .column.small-12
+        %h5 Wedding Gifts
 
-  #ballons
-    #balloon01{data: {top: {bottom: "top: -150px"}, bottom: {center: "top: 200px"}}}
-    #balloon02{data: {top: {bottom: "top: -200px"}, bottom: {center: "top: 350px"}}}
-    #balloon03{data: {top: {bottom: "top: -50px"}, bottom: {center: "top: 230px"}}}
-  #bridge
-    #couple
-
+    .row-fluid.overflow
+      %ul.small-block-grid-3
+        - @venue_photos.last(3).each do |venue_photo|
+          %li= image_tag venue_photo.file_url
+    .row
+      .column.small-12
+        #venue-copy
+          = raw(@event.registry_body.from_markdown_to_html)
+  
 - @event.sections.each do |section|
   %section
     .row

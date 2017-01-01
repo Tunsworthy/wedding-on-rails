@@ -29,8 +29,10 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-pencil:before { content: '\e800'; } /* '' */
-.icon-camera:before { content: '\e801'; } /* '' */
+.icon-camera:before { content: '\e800'; } /* '' */
+.icon-pencil:before { content: '\e801'; } /* '' */
+.icon-location:before { content: '\e802'; } /* '' */
+.icon-gift:before { content: '\e812'; } /* '' */
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
@@ -62,6 +64,3 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-
-.icon-pencil:before { content: '\e800'; } /* '' */
-.icon-camera:before { content: '\e801'; } /* '' */

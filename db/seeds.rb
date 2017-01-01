@@ -3,32 +3,37 @@ def seed_image(file_name)
 end
 
 event = Event.create!({
-  date: Date.parse("2015-06-13"),
-  location: "Mansion House, Clifton, Bristol, UK",
+  date: Date.parse("2017-07-01"),
+  location: "St Helen's Bishopsgate",
   active: true,
-  title: "Adam & Cerys",
-  partner_one: "Adam",
-  partner_two: "Cerys",
-  venue_name: "Mansion House",
-  venue_address_line_one: "Clifton Down",
-  venue_address_city: "Bristol",
-  venue_address_state: "Bristol",
-  venue_address_zip: "BS8 3LJ",
+  registry: true,
+  title: "Tom & Miao Qun",
+  partner_one: "Tom",
+  partner_two: "Miao Qun",
+  venue_name: "St Helen's",
+  venue_address_line_one: "Great St Helen's",
+  venue_address_city: "London",
+  venue_address_state: "London",
+  venue_address_zip: "EC3A 6AT",
   venue_address_country: "United Kingdom",
   venue_body: """
-Both the ceremony and reception will be held at The Mansion House located in the heart of Clifton.
-We're *hoping* for an outdoor ceremony in the venues beautiful gardens.
+Our ceremony will be held at St Helen's Bishopsgate followed by an afternoon tea at St Andrew's Undershaft.
+  """,
+   registry_body: """
+Wedding registry with Amaazon and John lewis there will also be a wishing well at the St Andrews
   """,
   venue_directions: """
-**From Dorset:** Take the A350 road via Shaftesbury, Warminster and Bath *appox 2hrs 30min*.
+**BY TUBE**
+Wherever in London you are travelling from, St Helen's is served by excellent public transport links. Bank, Aldgate and Liverpool Street are all a short walk from all of our church buildings.
 
-**From elsewhere:** To get directions [click here](https://www.google.co.uk/maps/dir//Mansion+House+Bristol,+Clifton+Down,+Avon,+Bristol+BS8+3LJ/@51.461078,-2.6274359,17z).
+**BY BUS**
+There are a number of buses that stop within walking distance of our church buildings. Use the journey planner to plan your visit.
 
-The Mansion House is located between the Clifton suspension bridge and Bristol Zoo. **From the portway** take the
-road up to Clifton and then take the first right keeping left at the fork and continue for 150 yards. **From the
-suspension bridge** heading into Clifton take the second left and continue down Canynge Road.
+**BY CAR**
+As there is limited parking around the city, we recommend you use public transport to visit us.
 
-Mansion House Bristol, Clifton Down, Bristol, BS8 3LJ
+**TFL Journey Planner**
+https://tfl.gov.uk/plan-a-journey/
   """
 })
 
@@ -36,7 +41,10 @@ venue_photos = VenuePhoto.create!([
   { event_id: event.id, file: seed_image("venue_photos/1.jpg") },
   { event_id: event.id, file: seed_image("venue_photos/2.jpg") },
   { event_id: event.id, file: seed_image("venue_photos/3.jpg") },
-  { event_id: event.id, file: seed_image("venue_photos/4.jpg") }
+  { event_id: event.id, file: seed_image("venue_photos/4.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/5.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/6.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/7.jpg") },
 ])
 
 event.primary_venue_photo = venue_photos.last.id
