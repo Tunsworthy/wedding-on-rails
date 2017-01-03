@@ -14,9 +14,10 @@ test:
   pool: 5
   timeout: 5000
   encoding: unicode
+
 production:
   adapter: postgresql
-  database: wedding-production
+  database: production
   pool: 5
   timeout: 5000
   encoding: unicode

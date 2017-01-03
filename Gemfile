@@ -68,7 +68,7 @@ gem "foundation-rails"
 gem "haml-rails"
 gem "simple_form"
 gem "sorcery"
-gem "carrierwave"
+gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem "fog"
 gem "pg"
