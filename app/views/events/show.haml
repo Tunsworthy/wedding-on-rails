@@ -50,7 +50,7 @@
             %h3 {{ guestName(guest) }}
             %input{type: "text", placeholder: "enter guest name", ng: { show: "guest.is_guest", model: "newGuest.name" }}
             %p {{ rsvpStatus(guest) }}
-            %span.button{ng: { show: "guest.rsvp == null && !guest.is_guest", click: "setRsvp(guest, false)"}} Sorry I can not attend
+            %span.button{ng: { show: "guest.rsvp == null && !guest.is_guest", click: "setRsvp(guest, false)"}} Sorry I cannot attend
             %span.button{ng: { hide: "guest.is_guest || guest.rsvp", click: "setRsvp(guest, true)"}} {{ rsvpButtonText(guest) }}
             %span.button{ng: { show: "guest.rsvp", click: "setRsvp(guest, false)"}} Sorry I can no longer make it
             %span.button{ng: { show: "guest.is_guest", disabled: "newGuest.name == ''", click: "defineGuest(guest)"}} {{ rsvpButtonText(guest) }}
@@ -122,14 +122,12 @@
           };
           })()
           </script>
-
 - if @event.show_registry?
   #Gifts
   .box.box--mint
     .row
       .column.small-12
         %h5 Wedding Gifts
-
     .row-fluid.overflow
       %ul.small-block-grid-3
         - @venue_photos.last(3).each do |venue_photo|

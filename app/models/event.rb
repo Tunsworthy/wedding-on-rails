@@ -27,8 +27,8 @@ class Event < ActiveRecord::Base
   end
 
 def show_registry?
-    return false if Event.last.registry == false
-    return true if Event.last.registry == true
+    return true if Event.first.registry == true
+    return false if Event.first.registry == false
   end
 
   def in_past?

@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150102105835) do
 
   create_table "guests", force: true do |t|
     t.string   "name"
+    t.string   "email"
     t.boolean  "rsvp"
     t.boolean  "invited_to_ceremony"
     t.boolean  "invited_to_evening"
