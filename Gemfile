@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 source "https://rails-assets.org"
 
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "4.1.6"
 # Use mysql as the database for Active Record
@@ -70,7 +71,7 @@ gem "simple_form"
 gem "sorcery"
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
-gem "fog"
+gem "fog", '~>1.38.0'
 gem "pg"
 gem "kramdown"
 gem "angularjs-rails"
