@@ -82,46 +82,22 @@
         %br
         .map--overlay{onclick: "style.pointerEvents='none'"}
         :plain
-          <script type="text/javascript" src="http://maps.google.com/maps/api/js?AIzaSyAaAFnOj6ksETWvLdFUP5Mqc_rIOi93Kk4"></script>
-          <div class="map wpgmappity_container" id="wpgmappitymap"></div>
-          <script type="text/javascript">
-          (function(){
-          function wpgmappity_maps_loaded() {
-          var latlng = new google.maps.LatLng(51.514700, -0.082156);
-          var options = {
-           center : latlng,
-           mapTypeId: google.maps.MapTypeId.ROADMAP,
-           zoomControl : true,
-           zoomControlOptions :
-           {
-           style: google.maps.ZoomControlStyle.SMALL,
-           position: google.maps.ControlPosition.TOP_LEFT
-           },
-           mapTypeControl : false,
-           scaleControl : false,
-           streetViewControl : false,
-           panControl : false, zoom : 16
-          };
-          var wpgmappitymap = new google.maps.Map(document.getElementById('wpgmappitymap'), options);
-          var point0 = new google.maps.LatLng(51.514787, -0.081821);
-          var marker0= new google.maps.Marker({
-           icon : 'http://labio-wedding.s3.amazonaws.com/assets/church7.png',
-           position : point0,
-           map : wpgmappitymap
-           });
-          google.maps.event.addListener(marker0,'click',
-           function() {
-           var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">St Helen Bishopsgate</h3>'});
-           infowindow.open(wpgmappitymap,marker0);
-           });
-          
-          }
-          window.onload = function() {
-           wpgmappity_maps_loaded();
-          };
-          })()
-          </script>
+          <script>
+      function initMap() {
+        var StHelens = {lat: 51.514700, lng: -0.082156};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: StHelens
+        });
+        var marker = new google.maps.Marker({
+          position: StHelens,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaAFnOj6ksETWvLdFUP5Mqc_rIOi93Kk4&callback=initMap">
+    </script>
 - if @event.show_registry?
   #Gifts
   .box.box--mint
