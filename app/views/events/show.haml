@@ -82,22 +82,22 @@
         %br
         .map--overlay{onclick: "style.pointerEvents='none'"}
         :plain
-        <div class="map wpgmappity_container" id="wpgmappitymap"></div>
-          <script>
-          function initMap() {
-            var uluru = {lat: -25.363, lng: 131.044};
-            var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 4,
-              center: uluru
+         <div class="map wpgmappity_container" id="wpgmappitymap"></div>
+         <script>
+         function initMap() {
+         var uluru = {lat: -25.363, lng: 131.044};
+         var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
             });
-            var marker = new google.maps.Marker({
-              position: uluru,
-              map: map
+          var marker = new google.maps.Marker({
+           position: uluru,
+           map: map
             });
           }
           </script>
           <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaAFnOj6ksETWvLdFUP5Mqc_rIOi93Kk4&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaAFnOj6ksETWvLdFUP5Mqc_rIOi93Kk4&callback=initMap">
           </script>
 - if @event.show_registry?
   #Gifts
