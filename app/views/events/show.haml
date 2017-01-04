@@ -82,22 +82,10 @@
         %br
         .map--overlay{onclick: "style.pointerEvents='none'"}
         :plain
-          <script>
-              function initMap() {
-                var StHelens = {lat: 51.514700, lng: -0.082156};
-                var map = new google.maps.Map(document.getElementById('map'), {
-                  zoom: 4,
-                  center: StHelens
-                });
-                var marker = new google.maps.Marker({
-                  position: StHelens,
-                  map: map
-                });
-              }
-            </script>
-            <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaAFnOj6ksETWvLdFUP5Mqc_rIOi93Kk4&callback=initMap">
-            </script>
+          <iframe src="//www.google.com/maps/embed/v1/place?q=Harrods,Brompton%20Rd,%20UK
+          &zoom=17
+          &key=AIzaSyAaAFnOj6ksETWvLdFUP5Mqc_rIOi93Kk4&callback=initMap">
+          </iframe>
 - if @event.show_registry?
   #Gifts
   .box.box--mint
