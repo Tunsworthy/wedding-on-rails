@@ -45,6 +45,11 @@ venue_photos = VenuePhoto.create!([
   { event_id: event.id, file: seed_image("venue_photos/5.jpg") },
   { event_id: event.id, file: seed_image("venue_photos/6.jpg") },
   { event_id: event.id, file: seed_image("venue_photos/7.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/8.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/9.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/10.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/11.jpg") },
+  { event_id: event.id, file: seed_image("venue_photos/12.jpg") },
 ])
 
 event.primary_venue_photo = venue_photos.last.id
