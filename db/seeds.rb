@@ -17,23 +17,27 @@ event = Event.create!({
   venue_address_zip: "EC3A 6AT",
   venue_address_country: "United Kingdom",
   venue_body: """
-Our ceremony will be held at St Helen's Bishopsgate followed by an afternoon tea at St Andrew's Undershaft.
+Our ceremony will begin at 2.30pm at St Helen’s Bishopsgate. We kindly request that all guests are seated by 2.20pm. After the ceremony we would love for you to join us for a celebratory afternoon tea at St Andrew’s Undershaft (approx. 2 minutes’ walk from St Helen’s).
+
   """,
    registry_body: """
-Wedding registry with Amaazon and John lewis there will also be a wishing well at the St Andrews
+Please use the links below to access our wedding registries with Amazon and John Lewis. There will also be a wishing well by the doors at St Helen’s.
+
+**<a href="https://www.amazon.com/wedding/share/TDUMQT-Wedding">Amazon</a>**
+
   """,
   venue_directions: """
 **BY TUBE**
-Wherever in London you are travelling from, St Helen's is served by excellent public transport links. Bank, Aldgate and Liverpool Street are all a short walk from all of our church buildings.
+St Helen’s is served by excellent public transport links. Bank, Aldgate and Liverpool Street tube stations are all a short walk from St Helen’s.
 
 **BY BUS**
-There are a number of buses that stop within walking distance of our church buildings. Use the journey planner to plan your visit.
+There are a number of buses (including 8, 11, 21, 43, 135, 141 and 243) that stop within walking distance of St Helen’s. Use the journey planner below to plan your journey.
 
 **BY CAR**
-As there is limited parking around the city, we recommend you use public transport to visit us.
+As there is limited parking around the city/ near St Helen’s, we recommend you use public transport to make your journey 
 
-**TFL Journey Planner**
-https://tfl.gov.uk/plan-a-journey/
+**<a href="https://tfl.gov.uk/plan-a-journey/">TFL Journey Planner</a>**
+
   """
 })
 

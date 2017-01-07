@@ -11,7 +11,6 @@
   .column.small-12
     %h5 Get married on
     %h3= @event.formatted_time
-
 #location.inverted.paralax{ :style => "background-image: url('#{@primary_venue_photo}');" }
   .row
     .column.small-12
@@ -19,7 +18,7 @@
       %br
       %br
 
-      %h2= "at the beautiful #{@event.location}"
+      %h2= "at #{@event.location}"
       %h4= "in #{@event.venue_address_city}"
 
       %br
@@ -38,7 +37,7 @@
     .column.small-12
       %h5 RSVP
       = simple_form_for rsvp_event_groups_path(@event) do |f|
-        %h3 Step one - enter your name
+        %h3 Step one - Please enter your name
         .row
           .column.small-12.column.medium-6.medium-offset-3
             = f.input :guest, collection: @groups, as: :select, placeholder: "Select your name(s)"
@@ -59,62 +58,72 @@
               %label
                 %input{type: "checkbox", ng: {change: "toggleVegetarian(guest)", model: "guest.vegetarian"}}
                 Vegetarian
-
+  #Photorow.photorow
+    %br
+    .row-fluid.overflow
+      %ul.small-block-grid-3
+        - @venue_ranphoto.first(3).each do |venue_photo|
+          %li= image_tag venue_photo.file_url
 #venue
 .box.box--mint
-  .row
-    .column.small-12
-      %h5 Venue
-
+.row
+  .column.small-12
+    %h5 Venue
+    %br
+    %br
+    %br
+    %br
+.row
+  .column.small-12
+    #venue-copy
+      %h3= @event.venue_name
+      = raw(@event.venue_body.from_markdown_to_html)
+      %br
+      %h4 Directions
+      = raw(@event.venue_directions.from_markdown_to_html)
+      %br
+      .map--overlay{onclick: "style.pointerEvents='none'"}
+      :plain
+        <div class="map wpgmappity_container" id="map"></div>
+        <script>
+        function initMap() {
+        var StHelens = {lat: 51.514854, lng: -0.081652};
+        var StAndrews = {lat: 51.513632, lng: -0.081072};
+        var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: StHelens
+        });
+        var marker = new google.maps.Marker({
+        position: StHelens,
+        icon : 'http://labio-wedding.s3.amazonaws.com/assets/church7.png',
+        map: map
+        });
+        var marker = new google.maps.Marker({
+        position: StAndrews,
+        map: map
+        });
+        }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaAFnOj6ksETWvLdFUP5Mqc_rIOi93Kk4&callback=initMap">
+        </script>
+%br
+#Photorow.photorow
+  %br
   .row-fluid.overflow
     %ul.small-block-grid-3
-      - @venue_ranphoto.first(3).each do |venue_photo|
+      - @venue_ranphoto.last(3).each do |venue_photo|
         %li= image_tag venue_photo.file_url
-
-  .row
-    .column.small-12
-      #venue-copy
-        %h3= @event.venue_name
-        = raw(@event.venue_body.from_markdown_to_html)
-        %br
-        %h4 Directions
-        = raw(@event.venue_directions.from_markdown_to_html)
-        %br
-        .map--overlay{onclick: "style.pointerEvents='none'"}
-        :plain
-          <div class="map wpgmappity_container" id="map"></div>
-          <script>
-          function initMap() {
-          var StHelens = {lat: 51.514854, lng: -0.081652};
-          var StAndrews = {lat: 51.513632, lng: -0.081072};
-          var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
-          center: StHelens
-          });
-          var marker = new google.maps.Marker({
-          position: StHelens,
-          icon : 'http://labio-wedding.s3.amazonaws.com/assets/church7.png',
-          map: map
-          });
-          var marker = new google.maps.Marker({
-          position: StAndrews,
-          map: map
-          });
-          }
-          </script>
-          <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaAFnOj6ksETWvLdFUP5Mqc_rIOi93Kk4&callback=initMap">
-          </script>
 - if @event.show_registry?
   #Gifts
   .box.box--mint
-    .row
-      .column.small-12
-        %h5 Wedding Gifts
-    .row-fluid.overflow
-      %ul.small-block-grid-3
-        - @venue_ranphoto.last(3).each do |venue_photo|
-          %li= image_tag venue_photo.file_url
+  .row
+    .column.small-12
+      %h5 Wedding Gifts
+      %br
+      %br
+      %br
+      %br
     .row
       .column.small-12
         #venue-copy
@@ -127,29 +136,10 @@
         %h5= section.title
         = raw(section.content.from_markdown_to_html)
 
-
-%br
-
-.row
-  .column.small-12.medium-8.medium-offset-2
-    %h5 Photos
-
-- if @event.show_photos?(params)
-  = render partial: "photos/form"
-  = render partial: "photos/index"
-  #modalDropImages.reveal-modal{"data-reveal" => "", :style => "display: block;"}
-    %h2.text--salmon Drop images to upload
-- else
-  .row
-    .column.small-12
-      %p We invite you back to this website after the wedding to view and upload photos
-
-%br
-
 %footer
   %p
     %small
-      For our techie friends hitched.it is an
-      %a{:href => "http://github.com/adambutler/wedding-on-rails"} open source project
-      built on Ruby-on-Rails.
+      This site was built from an open source project
+      %a{:href => "http://github.com/adambutler/wedding-on-rails"} Wedding-On-Rails
+      
 
