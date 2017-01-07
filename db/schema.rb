@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150102105835) do
     t.boolean  "active"
     t.boolean  "registry"
     t.string   "title"
-    t.string   "registry_body"
+    t.text   "registry_body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "partner_one"

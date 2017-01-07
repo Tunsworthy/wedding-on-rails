@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration
       t.boolean :active
       t.boolean :registry
       t.string :title
-      t.string :registry_body
+      t.text :registry_body
       t.timestamps
     end
   end
