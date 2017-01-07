@@ -22,9 +22,6 @@ Our ceremony will begin at 2.30pm at St Helen’s Bishopsgate. We kindly request
   """,
    registry_body: """
 Please use the links below to access our wedding registries with Amazon and John Lewis. There will also be a wishing well by the doors at St Helen’s.
-
-**<a href="https://www.amazon.com/wedding/share/TDUMQT-Wedding">Amazon</a>**
-
   """,
   venue_directions: """
 **BY TUBE**
@@ -35,8 +32,6 @@ There are a number of buses (including 8, 11, 21, 43, 135, 141 and 243) that sto
 
 **BY CAR**
 As there is limited parking around the city/ near St Helen’s, we recommend you use public transport to make your journey 
-
-**<a href="https://tfl.gov.uk/plan-a-journey/">TFL Journey Planner</a>**
 
   """
 })
