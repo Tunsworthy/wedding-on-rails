@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
   end
 
   def notification_delay
-    1.minutes.from_now
+    5.minutes.from_now
   end
 end
