@@ -10,6 +10,8 @@ class CreateGuests < ActiveRecord::Migration
       t.integer :group_size
       t.boolean :arrival_transportation_required
       t.boolean :departing_transport_requred
+      t.boolean :Dietary_Requirements
+      t.text :Dietary_Requirements_Text
 
       t.timestamps
     end

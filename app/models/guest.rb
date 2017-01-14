@@ -11,6 +11,7 @@ class Guest < ActiveRecord::Base
 
   def init
     self.name ||= "Guest"
+    self.Dietary_Requirements ||= false
     self.vegetarian ||= false
   end
 

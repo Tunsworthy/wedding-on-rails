@@ -1,0 +1,28 @@
+Allergies/Dietary_Requirements
+
+Removed 
+:invited_to_ceremony, :invited_to_evening, :vegetarian, :arrival_transportation_required, :departing_transport_requred
+Added
+:Dietary_Requirements,:Dietary_Requirements_Text
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#       modified:   Gemfile
+#       modified:   app/controllers/admin/groups_controller.rb - 
+#       modified:   app/controllers/admin/guests_controller.rb - 
+#       modified:   app/controllers/guests_controller.rb - 
+#       modified:   app/models/guest.rb - done 
+#       modified:   app/views/admin/guests/_form.haml - 
+#       modified:   db/migrate/20141029124003_create_guests.rb - 
+#       modified:   db/schema.rb
+#       modified:   db/seeds.rb - 
+#
+# Changes not staged for commit:
+#       modified:   app/controllers/guests_controller.rb
+#       modified:   db/seeds.rb
+#

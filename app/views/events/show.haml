@@ -54,8 +54,10 @@
             %span.button{ng: { show: "guest.rsvp", click: "setRsvp(guest, false)"}} Sorry I can no longer make it
             %span.button{ng: { show: "guest.is_guest", disabled: "newGuest.name == ''", click: "defineGuest(guest)"}} {{ rsvpButtonText(guest) }}
 
-            .reset{ng: {show: "guest.rsvp && guest.invited_to_ceremony"}}
+            .reset{ng: {show: "guest.rsvp"}}
               %label
+              
+
                 %input{type: "checkbox", ng: {change: "toggleVegetarian(guest)", model: "guest.vegetarian"}}
                 Vegetarian
   #Photorow.photorow
@@ -136,6 +138,7 @@
         %h5= section.title
         = raw(section.content.from_markdown_to_html)
 
+%br
 %footer
   %p
     %small
