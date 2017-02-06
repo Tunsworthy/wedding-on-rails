@@ -1,3 +1,5 @@
+event = Event.find params[:id] || default_event
+
 bAxUS = Group.create!({event_id: event.id})
 
 GunHt = Guest.create!({
