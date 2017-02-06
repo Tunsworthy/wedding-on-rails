@@ -1,3 +1,6 @@
+
+event = Event.find(1)
+
 bAxUS = Group.create!({event_id: event.id})
 
 GunHt = Guest.create!({
@@ -723,7 +726,7 @@ group_id: fLIPK.id,
 event_id: event.id
 })
 
-Rakesh _Guest = Guest.create!({
+Rakesh_Guest = Guest.create!({
 group_id: fLIPK.id,
 event_id: event.id
 })
