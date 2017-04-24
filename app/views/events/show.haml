@@ -49,8 +49,9 @@
             %h3 {{ guestName(guest) }}
             %input{type: "text", placeholder: "enter guest name", ng: { show: "guest.is_guest", model: "newGuest.name" }}
             %p {{ rsvpStatus(guest) }}
+            %input{type: "text",:required => true, placeholder: "Please enter your email", ng: { hide: "guest.is_guest || guest.rsvp", model: "guest.email", message: "Required "}}
             %span.button{ng: { show: "guest.rsvp == null && !guest.is_guest", click: "setRsvp(guest, false)"}} Sorry I cannot attend
-            %span.button{ng: { hide: "guest.is_guest || guest.rsvp", click: "setRsvp(guest, true)"}} {{ rsvpButtonText(guest) }}
+            %span.button{ng: { hide: "guest.is_guest || guest.rsvp",disabled: "!guest.email", click: "setRsvp(guest, true)"}} {{ rsvpButtonText(guest) }}
             %span.button{ng: { show: "guest.rsvp", click: "setRsvp(guest, false)"}} Sorry I can no longer make it
             %span.button{ng: { show: "guest.is_guest", disabled: "newGuest.name == ''", click: "defineGuest(guest)"}} {{ rsvpButtonText(guest) }}
 
