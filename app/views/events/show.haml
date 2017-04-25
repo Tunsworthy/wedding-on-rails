@@ -90,19 +90,14 @@
         <div class="map wpgmappity_container" id="map"></div>
         <script>
         function initMap() {
-        var StHelens = {lat: 51.514854, lng: -0.081652};
-        var StAndrews = {lat: 51.513632, lng: -0.081072};
+        var Hotel = {lat: 1.293632, lng: 103.853592};
         var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 16,
-        center: StHelens
+        center: Hotel
         });
         var marker = new google.maps.Marker({
-        position: StHelens,
-        icon : 'http://labio-wedding.s3.amazonaws.com/assets/church7.png',
-        map: map
-        });
-        var marker = new google.maps.Marker({
-        position: StAndrews,
+        position: Hotel,
+        icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
         map: map
         });
         }
