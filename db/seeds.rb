@@ -4,7 +4,7 @@ end
 
 event = Event.create!({
   date: Date.parse("2017-07-08"),
-  location: "Raffles City Convention Center",
+  location: "Fairmont Swissotel The Stamford",
   active: true,
   registry: false,
   title: "Tom & Miao Qun",
@@ -17,8 +17,7 @@ event = Event.create!({
   venue_address_zip: "178882",
   venue_address_country: "Singapore",
   venue_body: """
-Our reception will being at 7.00pm in the Canning Ballroom in the Swissôtel. We kindly request that all guests arrive prior to 7.00pm for a prompt start.
-
+Our cocktail reception will begin at 7pm and we kindly request that all guests be seated by 8pm in the Canning Ballroom so that dinner can commence on time.
   """,
    registry_body: """
 
